@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+ <meta name="theme-color" content="#090b0d">
+ <meta name="apple-mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+ <meta name="apple-mobile-web-app-title" content="KT COMMAND">
+ <meta name="description" content="Private offline Kill Team datacards, battle tracker and team library.">
+ <link rel="manifest" href="./manifest.webmanifest">
+ <link rel="apple-touch-icon" href="./icons/icon-180.png">
+ <link rel="icon" type="image/png" href="./icons/icon-192.png">
+ <link rel="stylesheet" href="./styles.css">
+ <title>Kill Team · Tactical Command</title>
+ <script type="module" src="./app.js"></script>
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-sigil" aria-hidden="true">✠</div><div><span class="brand-top">TACTICAL DATASLATE</span><strong data-team-name>INSIDIANTS</strong><small>OFFLINE COMMAND // V2.0</small></div></div>
+    <div class="nav-caption">OPERATIONS</div>
+    <nav id="main-nav" aria-label="Main navigation">
+      <button class="nav-link active" data-nav="dashboard"><span class="nav-icon">▦</span>DASHBOARD</button>
+      <button class="nav-link" data-nav="operatives"><span class="nav-icon">⛨</span>OPERATIVES</button>
+      <button class="nav-link" data-nav="resources"><span class="nav-icon">✦</span>PLOYS & RULES</button>
+      <button class="nav-link" data-nav="equipment"><span class="nav-icon">⬡</span>EQUIPMENT</button>
+      <button class="nav-link" data-nav="log"><span class="nav-icon">≡</span>BATTLE LOG</button>
+    </nav>
+    <div class="nav-caption">CONFIGURATION</div>
+    <nav>
+      <button class="nav-link" data-nav="teams"><span class="nav-icon">▤</span>TEAM LIBRARY</button>
+      <button class="nav-link" data-nav="editor"><span class="nav-icon">⚙</span>ROSTER EDITOR</button>
+    </nav>
+    <div class="sidebar-bottom"><div class="status-led"></div><div>LOCAL DEVICE STORAGE<small>NO ACCOUNT · NO BACKEND</small></div></div>
+  </aside>
+  <div class="workarea">
+    <header class="topbar">
+      <div class="mobile-brand"><b>✠ <span data-team-name>INSIDIANTS</span></b><span>TACTICAL COMMAND</span></div>
+      <div class="top-left"><span class="top-kicker">KILL TEAM //</span><span id="top-page">BATTLE OVERVIEW</span></div>
+      <div class="top-meters">
+        <div class="meter"><span>TURNING POINT</span><button aria-label="Use Undo to reverse a turning point" class="meter-step" id="turn-back">‹</button><b id="turn-number">1</b><button id="next-turn-mini" class="meter-step" aria-label="Advance turning point">›</button></div>
+        <div class="meter cp-meter"><span>COMMAND POINTS</span><button class="meter-step" id="cp-minus" aria-label="Subtract CP">−</button><b id="cp-number">2</b><button class="meter-step" id="cp-plus" aria-label="Add CP">+</button></div>
+      </div>
+    </header>
+    <main id="content" class="content" tabindex="-1"><div class="loading">INITIALISING LOCAL DATASLATE...</div></main>
+    <footer class="footbar"><span>◈ DEVICE-LOCAL · EXPORT BACKUPS</span><span>THE EMPEROR PROTECTS. BACKUPS HELP.</span></footer>
+  </div>
+</div>
+<nav class="mobile-nav" aria-label="Mobile navigation">
+  <button data-nav="dashboard" class="active">▦<span>HOME</span></button>
+  <button data-nav="operatives">⛨<span>ROSTER</span></button>
+  <button data-nav="resources">✦<span>PLOYS</span></button>
+  <button data-nav="equipment">⬡<span>GEAR</span></button>
+  <button data-nav="teams">▤<span>TEAMS</span></button>
+  <button data-nav="editor">⚙<span>EDIT</span></button>
+</nav>
+<div id="modal-root" class="modal-root" hidden></div>
+<div id="toast-root" role="status" aria-live="polite"></div>
+</body>
+</html>
